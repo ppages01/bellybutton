@@ -3,7 +3,7 @@ init();
 function getPlot(otu) {
 
     
-d3.json("samples.json", function(data) {
+d3.json("samples.json").then((data) => {
     JSONItems = data;
     //console.log(JSONItems);
     
@@ -199,7 +199,7 @@ function getInfo(otu)
         
         // let table = document.querySelector('table');
 
-        d3.json("samples.json", function(data) 
+        d3.json("samples.json").then((data) => 
         {
             JSONItems = data;
             submeta = JSONItems.metadata.filter(s =>s.id == otu);
@@ -240,8 +240,7 @@ function init()
         //the section of the webpage were the dropdown code is located.
 
         //d3 json the file file, and old school loop it
-        d3.json("samples.json", function(data) 
-        {
+        d3.json("samples.json").then((data) =>  {
             JSONItems = data;
             var pats = JSONItems.names;
             
