@@ -248,10 +248,20 @@ function init()
             for (let i = 0; i < pats.length; i++) 
             {
                 var option = `<option>${pats[i]}</option>`
+                patient = pats[i];
+                if (patient == 940) {
+                 patients.innerHTML = `<option selected>${pats[i]}</option>`;
+                 optionChanged(patient);
+
+
+
+                } else {
                 patients.innerHTML += option;
+                }
             }
             
         }); 
+        
         
         
     }
