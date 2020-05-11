@@ -85,12 +85,12 @@ d3.json("samples.json").then((data) => {
 //Guage Chart (BONUS) - meh
 
 // Enter a speed between 0 and 180
-var level = 90;
+var level = 18;
 
 // Trig to calc meter point
-var degrees = 180 - level,
-     radius = .5;
-var radians = degrees * Math.PI / 180;
+var degrees = 180 - level  * wfreqNum,
+     radius = 1.0;
+var radians = degrees * Math.PI / 180 ;
 var x = radius * Math.cos(radians) ;
 //var x = radius * Math.cos(radians);
 var y = radius * Math.sin(radians );
@@ -142,52 +142,6 @@ var layout = {
 };
 
 Plotly.newPlot('gauge', data, layout);
-// part of data to input
-            // var traceGauge = {
-            //     type: 'pie',
-            //     showlegend: false,
-            //     hole: 0.4,
-            //     rotation: 90,
-            //     values: [ 81/9, 81/9, 81/9, 81/9, 81/9, 81/9, 81/9, 81/9, 81/9, 81],
-            //     text: ['0-1','1-2','2-3','3-4','4-5','5-6','6-7','7-8','8-9'],
-            //     direction: 'clockwise',
-            //     textinfo: 'text',
-            //     textposition: 'inside',
-            //     marker: {
-            //     colors: ['rgba(14, 127, 0, .5)','rgba(110, 154, 22, .5)','rgba(170, 202, 42, .5)','rgba(202, 209, 95, .5)','rgba(210, 206, 145, .5)','rgba(232, 226, 202, .5)','rgba(255, 255, 255, 0)','','','white'],
-            //     labels: ['0-1','1-2','2-3','3-4','4-5','5-6','6-7','7-8','8-9'],
-            //     hoverinfo: 'Belly Button Washing Frequency'
-            //     }
-            // }
-
-            // // needle
-            // var degrees = 50, radius = .9
-            // var radians = degrees * Math.PI / 180
-            // var x = -1 * radius * Math.cos(radians) * wfreqNum
-            // var y = radius * Math.sin(radians)
-
-            // var gaugeLayout = {
-            //     shapes: [{
-            //     type: 'line',
-            //     x0: 0.5,
-            //     y0: 0.5,
-            //     x1: 0.6,
-            //     y1: 0.6,
-            //     line: {
-            //         color: 'black',
-            //         width: 3
-            //     }
-            //     }],
-            //     title: 'Chart',
-            //     xaxis: {visible: false, range: [-1, 1]},
-            //     yaxis: {visible: false, range: [-1, 1]}
-            // }
-
-            // var dataGauge = [traceGauge]
-
-            // Plotly.plot('gauge', dataGauge, gaugeLayout)
-
-
     });
 
 }
